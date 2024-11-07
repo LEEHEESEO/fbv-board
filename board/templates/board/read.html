@@ -1,0 +1,28 @@
+{% extends 'board/base.html' %}
+{% block title %} Content {% endblock %}
+{% block content %}
+<table border = "1">
+    <tr>
+        <th>Date</th>
+        <th>Views</th>
+    </tr>
+    <tr>
+        <td> {{board.regdate}} </td>
+        <td> {{board.readcount}} </td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td>{{board.title}}</td>
+    </tr>
+    <tr>
+        <th>writer</th>
+        <td>{{board.writer}}</td>
+    </tr>
+    <tr>
+        <th>content</th>
+        <td>{{board.content}}</td>
+    </tr>
+</table>
+<a href = "#"><button>Edit</button></a>
+<a href = "#"><button>Delete</button></a>
+{% endblock %}

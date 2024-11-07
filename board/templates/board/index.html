@@ -2,7 +2,7 @@
 {% block title %} Index {% endblock %}
 {% block content %}
 <ul>
-    <li><a href = "#"> list </a></li>
+    <li><a href = "{% url 'board:list' %}"> list </a></li>
     <li><a href = "#"> registration </a></li>
 </ul>
 {% endblock %}
