@@ -23,6 +23,6 @@
         <td>{{board.content}}</td>
     </tr>
 </table>
-<a href = "#"><button>Edit</button></a>
+<a href = "{% url 'board:edit' board.id %}"><button>Edit</button></a>
 <a href = "#"><button>Delete</button></a>
 {% endblock %}

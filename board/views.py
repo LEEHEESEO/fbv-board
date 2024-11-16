@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import Board
 
@@ -7,7 +7,7 @@ def index (request):
     return render(request, 'board/index.html')
 
 def list(request):
-    board_list = Board.objects.all()
+    board_list = Board.objects.all().order_by('-id')
     context = {
         'board_list' : board_list,
     }
@@ -34,4 +34,15 @@ def regist(request):
         Board(title = title, writer=writer, content = content).save()
         return redirect(reverse('board:list'))
     else:
-        return render(request, 'board/rehist.html')
+        return render(request, 'board/regist.html')
+    
+def edit(request, id):
+    board = Board.objects.get(pk = id)
+    if request.method == "POST":
+        board.title = request.POST['title']
+        board.writer = request.POST.get('writer')
+        board.content = request.POST['content']
+        board.save()
+        return redirect(reverse('board:list'))
+    else:
+        return render (request, 'board/edit.html', {'board':board})

@@ -3,26 +3,26 @@
 {% block content %}
 <form method = "post">
     {%csrf_token%}
-    <table border = "1">
-        <tr>
-            <th>Title</th>
-            <td>
-                <input type = 'text' name = "title">
-            </td>
-        </tr>
-        <tr>
+<table border = "1">
+    <tr>
+        <th>Title</th>
+         <td>
+            <input type = 'text' name = "title">
+        </td>
+    </tr>
+    <tr>
         <th>Wirter</th>
             <td>
-                    <input type = "text" name = "writer">
+                <input type = "text" name = "writer">
             </td>
-        </tr>
-        <tr>
-            <th>Content</th>
-                <td>
-                        <input type = "text" name = "content">
-                </td>
-            </tr>
-    </table>
-    <button type = "submit"> REGIST </button>
+    </tr>
+    <tr>
+        <th>Content</th>       
+        <td>
+            <textarea name="content"></textarea>
+        </td>
+    </tr>
+</table>    
+<button type = "submit"> REGIST </button>
 </form>
 {% endblock %}
